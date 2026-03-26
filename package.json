@@ -1,0 +1,68 @@
+{
+  "name": "@jbfullstack/score-parser",
+  "version": "1.0.0",
+  "description": "Parse MIDI and Guitar Pro files into a clean, format-neutral JSON structure. Handles transposing instruments (saxophone, clarinet, trumpet) correctly.",
+  "keywords": [
+    "midi",
+    "guitar-pro",
+    "gpx",
+    "music",
+    "parser",
+    "saxophone",
+    "music-notation",
+    "musicxml",
+    "abc-notation"
+  ],
+  "author": "Jérémy Brunel <jeremy.brunel.fullstack@gmail.com>",
+  "contributors": [
+    "Bashroom <jeremy.brunel@bashroom.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbfullstack/score-parser.git"
+  },
+  "homepage": "https://github.com/jbfullstack/score-parser#readme",
+  "bugs": {
+    "url": "https://github.com/jbfullstack/score-parser/issues"
+  },
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "bin": {
+    "score-parser": "dist/cli/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENCE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "build:check": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepack": "npm run build:check && npm run build",
+    "prepublishOnly": "npm run build:check && npm run build && npm test"
+  },
+  "peerDependencies": {
+    "@coderline/alphatab": ">=1.3.0",
+    "@tonejs/midi": ">=2.0.0"
+  },
+  "devDependencies": {
+    "@coderline/alphatab": "^1.8.1",
+    "@tonejs/midi": "^2.0.28",
+    "@types/node": "^22",
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^4.0.0"
+  }
+}

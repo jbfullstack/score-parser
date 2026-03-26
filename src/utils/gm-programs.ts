@@ -1,0 +1,41 @@
+/** Noms General MIDI — programmes courants */
+export const GM_PROGRAM_NAMES: Readonly<Record<number, string>> = {
+   0: "Acoustic Grand Piano",
+   1: "Bright Acoustic Piano",
+   6: "Harpsichord",
+  24: "Acoustic Guitar (nylon)",
+  25: "Acoustic Guitar (steel)",
+  26: "Electric Guitar (jazz)",
+  27: "Electric Guitar (clean)",
+  28: "Electric Guitar (muted)",
+  29: "Overdriven Guitar",
+  30: "Distortion Guitar",
+  32: "Acoustic Bass",
+  33: "Electric Bass (finger)",
+  34: "Electric Bass (pick)",
+  40: "Violin",
+  41: "Viola",
+  42: "Cello",
+  43: "Contrabass",
+  56: "Trumpet",
+  57: "Trombone",
+  58: "Tuba",
+  59: "Muted Trumpet",
+  60: "French Horn",
+  61: "Brass Section",
+  64: "Soprano Sax",
+  65: "Alto Sax",
+  66: "Tenor Sax",
+  67: "Baritone Sax",
+  68: "Oboe",
+  69: "English Horn",
+  70: "Bassoon",
+  71: "Clarinet",
+  73: "Flute",
+  74: "Recorder",
+  75: "Pan Flute",
+};
+
+export function getGMInstrumentLabel(program: number): string {
+  return GM_PROGRAM_NAMES[program] ?? `MIDI Program ${program}`;
+}
